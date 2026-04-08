@@ -8,7 +8,9 @@
     "install-all": "npm run client:install && npm run server:install",
     "client:dev": "npm run dev --prefix client",
     "server:dev": "npm run dev --prefix server",
-    "dev": "npm run client:dev"
+    "dev": "npm run client:dev",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix client"
   },
   "author": "",
   "license": "ISC"
