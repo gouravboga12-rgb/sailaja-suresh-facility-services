@@ -1,0 +1,15 @@
+{
+  "name": "sailaja-suresh-facility-services",
+  "version": "1.0.0",
+  "description": "Staffing and Facility Management Services Website",
+  "scripts": {
+    "client:install": "npm install --prefix client",
+    "server:install": "npm install --prefix server",
+    "install-all": "npm run client:install && npm run server:install",
+    "client:dev": "npm run dev --prefix client",
+    "server:dev": "npm run dev --prefix server",
+    "dev": "npm run client:dev"
+  },
+  "author": "",
+  "license": "ISC"
+}
