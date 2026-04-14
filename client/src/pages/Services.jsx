@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import ServiceCard from '../components/ServiceCard';
 import * as LucideIcons from 'lucide-react';
 import { 
@@ -7,7 +8,6 @@ import {
 } from 'lucide-react';
 import { getServices } from '../api';
 import { defaultServices } from '../data/defaultData';
-import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -36,8 +36,8 @@ const Services = () => {
     <div className="bg-black pt-32 pb-24">
       <Helmet>
         <title>Our Services | S S Facility Services</title>
-        <meta name="description" content="Explore our wide range of professional services including housekeeping, industrial production staff, pantry boys, technical maintenance, and more." />
-        <link rel="canonical" href="https://ssfacilityservice.com/services" />
+        <meta name="description" content="Explore our wide range of professional services: Housekeeping, Industrial Manpower, Pantry Staff, Lab Assistants, HVAC Maintenance, and more." />
+        <link rel="canonical" href="https://www.ssfacilityservices.in/services" />
       </Helmet>
       {/* Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center">

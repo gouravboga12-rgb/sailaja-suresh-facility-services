@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import IndustryCard from '../components/IndustryCard';
@@ -13,7 +14,6 @@ import {
 } from 'lucide-react';
 import { getServices, getSettings } from '../api';
 import { defaultServices, defaultSettings } from '../data/defaultData';
-import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -161,14 +161,8 @@ const Home = () => {
     <div className="bg-black">
       <Helmet>
         <title>S S Facility Services | Premium Staffing & Facility Management</title>
-        <meta name="description" content="S S Facility Services provides professional staffing solutions including housekeeping, production staff, pantry boys, and technical maintenance. Leading facility management in Hyderabad and Telangana." />
-        <meta name="keywords" content="staffing services, facility management, housekeeping, production boys, pantry boys, hyderabad staffing, manpower solutions telangana, Genome Valley staffing, Medchal manpower" />
-        <link rel="canonical" href="https://ssfacilityservice.com/" />
-        
-        {/* Open Graph / Facebook */}
-        <meta property="og:title" content="S S Facility Services | Premium Staffing & Facility Management" />
-        <meta property="og:description" content="Professional staffing solutions and facility management for industries. Serving Hyderabad, Medchal, and Genome Valley." />
-        <meta property="og:url" content="https://ssfacilityservice.com/" />
+        <meta name="description" content="Leading manpower staffing and facility management solutions in Hyderabad. We provide professional housekeeping, pantry, and industrial labor services." />
+        <link rel="canonical" href="https://www.ssfacilityservices.in/" />
       </Helmet>
 
       {/* ══════════════════════════ HERO ══════════════════════════ */}

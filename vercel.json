@@ -2,7 +2,7 @@
   "outputDirectory": "client/dist",
   "rewrites": [
     {
-      "source": "/((?!robots.txt|sitemap.xml).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]

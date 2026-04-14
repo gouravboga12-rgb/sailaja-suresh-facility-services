@@ -1,11 +1,11 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
   MapPin, CheckCircle2, Zap, Users, FlaskConical, Factory,
   Building2, Package, Shield, Wrench, Wind, Clock, TrendingUp,
   Star, Coffee, UserCheck, ArrowRight, Phone, Trophy, X, Check, Sparkles
 } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 
 const Locations = () => {
 
@@ -85,8 +85,8 @@ const Locations = () => {
     <div className="bg-black pt-32 pb-24 min-h-screen">
       <Helmet>
         <title>Our Locations | S S Facility Services</title>
-        <meta name="description" content="S S Facility Services operates in key industrial hubs across Telangana, including Genome Valley, Medchal–Malkajgiri, and Siddipet. Find premium manpower solutions near you." />
-        <link rel="canonical" href="https://ssfacilityservice.com/locations" />
+        <meta name="description" content="S S Facility Services operates across major industrial hubs in Telangana, including Genome Valley, Medchal-Malkajgiri, and Siddipet." />
+        <link rel="canonical" href="https://www.ssfacilityservices.in/locations" />
       </Helmet>
 
       {/* === HERO SECTION === */}

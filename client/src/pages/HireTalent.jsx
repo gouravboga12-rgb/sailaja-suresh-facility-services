@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Send, Users, Building, Phone, Briefcase, MapPin, MessageSquare, CheckCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { Send, Users, Building, Phone, Briefcase, MapPin, MessageSquare, CheckCircle } from 'lucide-react';
 
 const HireTalent = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -68,8 +68,8 @@ const HireTalent = () => {
         <div className="bg-black pt-32 pb-24 min-h-screen">
             <Helmet>
                 <title>Hire Talent | S S Facility Services</title>
-                <meta name="description" content="Hire trained and verified facility staff via S S Facility Services. Submit your requirement for housekeeping, production, pantry, or technical maintenance workers." />
-                <link rel="canonical" href="https://ssfacilityservice.com/hire-talent" />
+                <meta name="description" content="Looking for reliable manpower? Submit your staffing requirements and hire skilled talent for housekeeping, production, and technical roles today." />
+                <link rel="canonical" href="https://www.ssfacilityservices.in/hire-talent" />
             </Helmet>
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
                 <h2 className="text-secondary font-bold tracking-[0.4em] uppercase mb-4" data-aos="fade-up">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
   Target, Eye, Heart, Award, CheckCircle2, Users, ShieldCheck,
@@ -7,7 +8,6 @@ import {
 } from 'lucide-react';
 import { getSettings } from '../api';
 import { defaultSettings } from '../data/defaultData';
-import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   const [settings, setSettings] = useState({});
@@ -120,8 +120,8 @@ const About = () => {
     <div className="bg-black pt-32 pb-24 min-h-screen">
       <Helmet>
         <title>About Us | S S Facility Services</title>
-        <meta name="description" content="Learn about S S Facility Services, founded by Thatikonda Suresh Goud. Providing expert manpower solutions and facility management across Telangana's industrial zones." />
-        <link rel="canonical" href="https://ssfacilityservice.com/about" />
+        <meta name="description" content="Discover S S Facility Services' journey, mission, and vision. Founded by Thatikonda Suresh Goud, we are leaders in staffing and facility solutions in Telangana." />
+        <link rel="canonical" href="https://www.ssfacilityservices.in/about" />
       </Helmet>
       {/* === HERO SECTION WITH BACKGROUND === */}
       <section className="relative mb-24 overflow-hidden">
