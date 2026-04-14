@@ -8,7 +8,7 @@ const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Path to the generated image
-const localImagePath = 'C:/Users/bogag/.gemini/antigravity/brain/aac530a6-16ab-4d66-8050-4f26fe60d16e/professional_businessman_portrait_md_1775822474181.png';
+const localImagePath = path.join(__dirname, '..', 'FF1.png');
 const fileName = 'founder_professional_portrait.png';
 
 async function uploadAndSetFounder() {

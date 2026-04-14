@@ -1,17 +1,45 @@
-import axios from 'axios';
+import { supabase } from '../supabaseClient';
 
-const API_URL = 'http://localhost:5000/api';
+export const getServices = async () => {
+  const { data, error } = await supabase
+    .from('services')
+    .select('*')
+    .order('created_at', { ascending: true });
+  if (error) throw error;
+  return { data };
+};
 
-const api = axios.create({
-  baseURL: API_URL,
-});
+export const createService = async (data) => {
+  const { data: result, error } = await supabase.from('services').insert([data]).select();
+  if (error) throw error;
+  return { data: result[0] };
+};
 
-export const getServices = () => api.get('/services');
-export const createService = (data) => api.post('/services', data);
-export const updateService = (id, data) => api.put(`/services/${id}`, data);
-export const deleteService = (id) => api.delete(`/services/${id}`);
+export const updateService = async (id, data) => {
+  const { data: result, error } = await supabase.from('services').update(data).eq('id', id).select();
+  if (error) throw error;
+  return { data: result[0] };
+};
 
-export const getSettings = () => api.get('/settings');
-export const updateSetting = (key, value) => api.put(`/settings/${key}`, { value });
+export const deleteService = async (id) => {
+  const { error } = await supabase.from('services').delete().eq('id', id);
+  if (error) throw error;
+  return { data: { message: 'Service deleted successfully' } };
+};
 
-export default api;
+export const getSettings = async () => {
+  const { data, error } = await supabase.from('settings').select('*');
+  if (error) throw error;
+  
+  const settingsObj = {};
+  data.forEach(item => {
+    settingsObj[item.key] = item.value;
+  });
+  return { data: settingsObj };
+};
+
+export const updateSetting = async (key, value) => {
+  const { data: result, error } = await supabase.from('settings').upsert({ key, value }).select();
+  if (error) throw error;
+  return { data: result[0] };
+};

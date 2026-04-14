@@ -261,6 +261,13 @@ const HireTalent = () => {
                             </ul>
                         </div>
                         
+                        <div className="bg-secondary p-8 rounded-[2rem] text-center shadow-2xl">
+                             <p className="text-white font-bold text-lg mb-2">Need Help Deciding?</p>
+                             <p className="text-white/70 text-sm mb-6">Our experts can help you calculate the exact number of staff needed for your facility.</p>
+                             <a href="tel:8897230178" className="inline-block bg-white text-secondary px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition-all">
+                                 CALL ADVISOR
+                             </a>
+                        </div>
                     </div>
                 </div>
             </section>

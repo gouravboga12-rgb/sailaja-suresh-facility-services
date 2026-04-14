@@ -119,9 +119,22 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-10 border-t border-secondary/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
-                    <p className="text-accent/60 text-xs">
-                        &copy; {currentYear} Sailaja Suresh Facility Services. All rights reserved.
-                    </p>
+                    <div className="space-y-2">
+                        <p className="text-accent/60 text-xs">
+                            &copy; {currentYear} Sailaja Suresh Facility Services. All rights reserved.
+                        </p>
+                        <p className="text-accent/60 text-[10px] uppercase font-bold tracking-widest leading-loose">
+                            Developed by{' '}
+                            <a 
+                                href="https://www.codtechitsolutions.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="text-highlight hover:text-white transition-colors underline decoration-highlight/30 underline-offset-4"
+                            >
+                                CODTECH IT SOLUTIONS
+                            </a>
+                        </p>
+                    </div>
                     <p className="text-accent/40 text-[10px] uppercase tracking-[0.2em]">
                         Founder: Thatikonda Suresh Goud
                     </p>

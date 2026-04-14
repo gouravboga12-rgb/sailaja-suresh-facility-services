@@ -12,6 +12,7 @@ import {
   ArrowRight, Sparkles, X, Check
 } from 'lucide-react';
 import { getServices, getSettings } from '../api';
+import { defaultServices, defaultSettings } from '../data/defaultData';
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -25,10 +26,25 @@ const Home = () => {
           getServices(),
           getSettings()
         ]);
-        setServices(servicesRes.data);
-        setSettings(settingsRes.data);
+        
+        // Safety Precaution: Use defaults if DB is empty or fails
+        if (servicesRes.data && servicesRes.data.length > 0) {
+          setServices(servicesRes.data);
+        } else {
+          console.log("Using default services (Safety Fallback)");
+          setServices(defaultServices);
+        }
+
+        if (settingsRes.data && Object.keys(settingsRes.data).length > 0) {
+           setSettings(settingsRes.data);
+        } else {
+           console.log("Using default settings (Safety Fallback)");
+           setSettings(defaultSettings);
+        }
       } catch (err) {
-        console.error("Error fetching home data:", err);
+        console.error("Error fetching home data, using fallbacks:", err);
+        setServices(defaultServices);
+        setSettings(defaultSettings);
       } finally {
         setLoadingServices(false);
       }
@@ -281,9 +297,10 @@ const Home = () => {
             <div className="w-full md:w-1/3 shrink-0">
                <div className="rounded-[2.5rem] overflow-hidden border border-white/20 shadow-2xl relative">
                   <img 
-                    src={settings.founder_image_url || "https://images.unsplash.com/photo-1600880212340-02d956ea36d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"} 
+                    src={settings.founder_image_url || "/images/founder_high_res.png"} 
                     alt="Founder" 
                     className="w-full h-80 object-cover transition-all duration-700" 
+                    style={{ imageRendering: 'high-quality' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                </div>

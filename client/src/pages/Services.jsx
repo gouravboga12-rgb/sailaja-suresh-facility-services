@@ -6,6 +6,7 @@ import {
   Search, ShieldCheck, HeartPulse, Loader2, Briefcase
 } from 'lucide-react';
 import { getServices } from '../api';
+import { defaultServices } from '../data/defaultData';
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -15,9 +16,14 @@ const Services = () => {
     const fetchServices = async () => {
       try {
         const res = await getServices();
-        setServices(res.data);
+        if (res.data && res.data.length > 0) {
+           setServices(res.data);
+        } else {
+           setServices(defaultServices);
+        }
       } catch (err) {
         console.error("Error fetching services:", err);
+        setServices(defaultServices);
       } finally {
         setLoading(false);
       }

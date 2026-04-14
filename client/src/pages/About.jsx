@@ -6,6 +6,7 @@ import {
   Factory, Building2, UserCheck, Trophy, Phone, Mail, ArrowRight
 } from 'lucide-react';
 import { getSettings } from '../api';
+import { defaultSettings } from '../data/defaultData';
 
 const About = () => {
   const [settings, setSettings] = useState({});
@@ -14,9 +15,14 @@ const About = () => {
     const fetchAboutData = async () => {
       try {
         const res = await getSettings();
-        setSettings(res.data);
+        if (res.data && Object.keys(res.data).length > 0) {
+          setSettings(res.data);
+        } else {
+          setSettings(defaultSettings);
+        }
       } catch (err) {
         console.error("Error fetching about settings:", err);
+        setSettings(defaultSettings);
       }
     };
     fetchAboutData();
@@ -146,9 +152,10 @@ const About = () => {
             <div className="relative" data-aos="fade-left">
               <div className="rounded-3xl overflow-hidden border border-secondary/20 shadow-2xl relative z-10">
                 <img
-                  src={settings.founder_image_url || "https://images.unsplash.com/photo-1600880212340-02d956ea36d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"}
+                  src={settings.founder_image_url || "/images/founder_high_res.png"}
                   alt="Founder and Vision"
-                  className="w-full transition-all duration-700"
+                  className="w-full h-[600px] object-cover transition-all duration-700"
+                  style={{ imageRendering: 'high-quality' }}
                 />
               </div>
               <div className="absolute -bottom-8 -right-8 bg-secondary p-8 rounded-3xl shadow-2xl z-20 hidden md:block border border-highlight/20">

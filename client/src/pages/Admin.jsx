@@ -4,6 +4,7 @@ import {
   getServices, createService, updateService, deleteService, 
   getSettings, updateSetting 
 } from '../api';
+import { defaultServices, defaultSettings } from '../data/defaultData';
 import { supabase } from '../supabaseClient';
 import { 
   Plus, Edit2, Trash2, Save, X, Image as ImageIcon, 
@@ -126,14 +127,54 @@ const Admin = () => {
   };
 
   const handleDelete = async (id) => {
-    if (window.confirm('Are you sure you want to delete this service?')) {
-      try {
-        await deleteService(id);
-        showSuccess('Service deleted successfully!');
-        fetchData();
-      } catch (err) {
-        setError('Failed to delete service');
+    const confirmDelete = window.confirm('Are you sure you want to delete this service? This action cannot be undone.');
+    if (!confirmDelete) return;
+
+    try {
+      setLoading(true);
+      await deleteService(id);
+      showSuccess('Service deleted successfully!');
+      fetchData();
+    } catch (err) {
+      setError('Failed to delete service');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleRestoreOriginals = async () => {
+    const confirmRestore = window.confirm(
+      'WARNING: This will delete ALL current services and restore the original eight services. Are you sure you want to proceed?'
+    );
+    if (!confirmRestore) return;
+
+    try {
+      setLoading(true);
+      
+      // 1. Delete all existing services
+      const { data: currentServices } = await getServices();
+      for (const s of currentServices) {
+        await deleteService(s.id);
       }
+
+      // 2. Insert original services
+      for (const s of defaultServices) {
+        await createService(s);
+      }
+
+      // 3. Ensure founder image is default if missing
+      const { data: currentSettings } = await getSettings();
+      if (!currentSettings.founder_image_url) {
+        await updateSetting('founder_image_url', defaultSettings.founder_image_url);
+      }
+
+      showSuccess('Original services and settings restored!');
+      fetchData();
+    } catch (err) {
+      setError('Failed to restore original data');
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -447,9 +488,18 @@ const Admin = () => {
 
             {/* List Section */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
                 <h3 className="text-3xl font-black text-slate-900">Managed Services</h3>
-                <span className="bg-white border border-slate-200 px-4 py-1 rounded-full text-[10px] font-black text-slate-500 shadow-sm">{services.length} TOTAL</span>
+                <div className="flex items-center gap-3">
+                  <button 
+                    onClick={handleRestoreOriginals}
+                    className="bg-red-50 text-red-600 border border-red-100 px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all shadow-sm"
+                    title="Emergency Restore: Use if services disappear"
+                  >
+                    Restore Originals
+                  </button>
+                  <span className="bg-white border border-slate-200 px-4 py-1 rounded-full text-[10px] font-black text-slate-500 shadow-sm">{services.length} TOTAL</span>
+                </div>
               </div>
               
               {services.map((service) => {
