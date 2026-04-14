@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Users, Building, Phone, Briefcase, MapPin, MessageSquare, CheckCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const HireTalent = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -46,7 +47,7 @@ const HireTalent = () => {
                     </div>
                     <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">Request Received!</h2>
                     <p className="text-accent text-lg mb-10 leading-relaxed">
-                        Thank you for reaching out to **Sailaja Suresh Facility Services**. Our talent acquisition team will review your requirements and contact you within the next 24 hours.
+                        Thank you for reaching out to **S S Facility Services**. Our talent acquisition team will review your requirements and contact you within the next 24 hours.
                     </p>
                     <button 
                         onClick={() => setSubmitted(false)}
@@ -65,6 +66,11 @@ const HireTalent = () => {
 
     return (
         <div className="bg-black pt-32 pb-24 min-h-screen">
+            <Helmet>
+                <title>Hire Talent | S S Facility Services</title>
+                <meta name="description" content="Hire trained and verified facility staff via S S Facility Services. Submit your requirement for housekeeping, production, pantry, or technical maintenance workers." />
+                <link rel="canonical" href="https://ssfacilityservice.com/hire-talent" />
+            </Helmet>
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
                 <h2 className="text-secondary font-bold tracking-[0.4em] uppercase mb-4" data-aos="fade-up">
                     Staffing Solution

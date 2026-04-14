@@ -5,6 +5,7 @@ import {
   Building2, Package, Shield, Wrench, Wind, Clock, TrendingUp,
   Star, Coffee, UserCheck, ArrowRight, Phone, Trophy, X, Check, Sparkles
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Locations = () => {
 
@@ -82,6 +83,11 @@ const Locations = () => {
 
   return (
     <div className="bg-black pt-32 pb-24 min-h-screen">
+      <Helmet>
+        <title>Our Locations | S S Facility Services</title>
+        <meta name="description" content="S S Facility Services operates in key industrial hubs across Telangana, including Genome Valley, Medchal–Malkajgiri, and Siddipet. Find premium manpower solutions near you." />
+        <link rel="canonical" href="https://ssfacilityservice.com/locations" />
+      </Helmet>
 
       {/* === HERO SECTION === */}
       <section className="relative mb-24 overflow-hidden">
@@ -355,7 +361,7 @@ const Locations = () => {
                   <th className="text-left text-accent/60 text-xs uppercase tracking-widest font-bold py-4 px-6 border-b border-white/10 w-1/2">What Matters</th>
                   <th className="text-center text-accent/60 text-xs uppercase tracking-widest font-bold py-4 px-6 border-b border-white/10">Other Agencies</th>
                   <th className="text-center text-xs uppercase tracking-widest font-extrabold py-4 px-6 border-b border-highlight/50 bg-highlight/10 rounded-t-2xl">
-                    <span className="text-highlight">Sailaja Suresh</span>
+                    <span className="text-highlight">S S FACILITY SERVICES</span>
                   </th>
                 </tr>
               </thead>

@@ -286,7 +286,7 @@ const Admin = () => {
             <SettingsIcon className="h-6 w-6" />
           </div>
           <h1 className="text-xl font-black tracking-tighter uppercase sm:block hidden text-slate-900">
-            Sailaja Suresh <span className="text-highlight">Admin</span>
+            S S FACILITY SERVICES <span className="text-highlight">Admin</span>
           </h1>
         </div>
         

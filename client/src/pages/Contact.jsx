@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, MessageSquare, Send, CheckCircle, Clock } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
@@ -89,6 +90,11 @@ const Contact = () => {
 
     return (
         <div className="bg-black pt-32 pb-24 min-h-screen">
+            <Helmet>
+                <title>Contact Us | S S Facility Services</title>
+                <meta name="description" content="Get in touch with S S Facility Services for staffing quotes, service inquiries, or technical support. We are available 24/7 for facility contracts." />
+                <link rel="canonical" href="https://ssfacilityservice.com/contact" />
+            </Helmet>
             {/* === HERO SECTION WITH BACKGROUND === */}
             <section className="relative mb-24 overflow-hidden">
                 {/* Background Image Overlay */}

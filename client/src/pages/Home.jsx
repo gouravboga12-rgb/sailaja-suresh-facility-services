@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { getServices, getSettings } from '../api';
 import { defaultServices, defaultSettings } from '../data/defaultData';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -158,6 +159,17 @@ const Home = () => {
 
   return (
     <div className="bg-black">
+      <Helmet>
+        <title>S S Facility Services | Premium Staffing & Facility Management</title>
+        <meta name="description" content="S S Facility Services provides professional staffing solutions including housekeeping, production staff, pantry boys, and technical maintenance. Leading facility management in Hyderabad and Telangana." />
+        <meta name="keywords" content="staffing services, facility management, housekeeping, production boys, pantry boys, hyderabad staffing, manpower solutions telangana, Genome Valley staffing, Medchal manpower" />
+        <link rel="canonical" href="https://ssfacilityservice.com/" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="S S Facility Services | Premium Staffing & Facility Management" />
+        <meta property="og:description" content="Professional staffing solutions and facility management for industries. Serving Hyderabad, Medchal, and Genome Valley." />
+        <meta property="og:url" content="https://ssfacilityservice.com/" />
+      </Helmet>
 
       {/* ══════════════════════════ HERO ══════════════════════════ */}
       <Hero />
@@ -212,7 +224,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-4">Our Advantage</h2>
-            <h3 className="text-3xl md:text-5xl font-extrabold text-white">Why Choose <span className="text-gradient">Sailaja Suresh?</span></h3>
+            <h3 className="text-3xl md:text-5xl font-extrabold text-white">Why Choose <span className="text-gradient">S S FACILITY SERVICES?</span></h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -238,7 +250,7 @@ const Home = () => {
           <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-secondary mb-3">Our Story</h2>
           <h3 className="text-3xl md:text-5xl font-extrabold text-white">About <span className="text-gradient">Our Company</span></h3>
           <p className="text-accent mt-4 max-w-3xl mx-auto leading-relaxed">
-            A trusted third-party manpower service provider delivering skilled and semi-skilled workforce across multiple industries. We bridge the gap between right talent and right opportunity.
+            <strong>S S FACILITY SERVICES</strong> is a trusted third-party manpower service provider delivering skilled and semi-skilled workforce across multiple industries. We bridge the gap between right talent and right opportunity.
           </p>
         </div>
 
@@ -529,7 +541,7 @@ const Home = () => {
         <div className="bg-gradient-to-r from-secondary to-highlight rounded-3xl p-12 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 relative z-10">Ready to enhance your facility operations?</h2>
-          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto relative z-10">Join hundreds of businesses that trust Sailaja Suresh Facility Services for their staffing needs.</p>
+          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto relative z-10">Join hundreds of businesses that trust S S FACILITY SERVICES for their staffing needs.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
             <Link to="/hire-talent" className="bg-white text-secondary hover:bg-black hover:text-white px-8 py-4 rounded-full font-bold transition-all shadow-xl">HIRE TALENT NOW</Link>
             <Link to="/contact" className="border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold transition-all">CONTACT US</Link>

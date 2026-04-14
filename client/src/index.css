@@ -89,6 +89,13 @@ html {
   background-clip: text;
 }
 
+.text-brand-green {
+  background: linear-gradient(135deg, #4ADE80 0%, #16A34A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .bg-premium-gradient {
   background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(30, 58, 138, 0.2) 100%);
 }

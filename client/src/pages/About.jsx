@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { getSettings } from '../api';
 import { defaultSettings } from '../data/defaultData';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   const [settings, setSettings] = useState({});
@@ -117,6 +118,11 @@ const About = () => {
 
   return (
     <div className="bg-black pt-32 pb-24 min-h-screen">
+      <Helmet>
+        <title>About Us | S S Facility Services</title>
+        <meta name="description" content="Learn about S S Facility Services, founded by Thatikonda Suresh Goud. Providing expert manpower solutions and facility management across Telangana's industrial zones." />
+        <link rel="canonical" href="https://ssfacilityservice.com/about" />
+      </Helmet>
       {/* === HERO SECTION WITH BACKGROUND === */}
       <section className="relative mb-24 overflow-hidden">
         {/* Background Image Overlay */}
@@ -139,7 +145,7 @@ const About = () => {
                 Leading the Way in <span className="text-gradient">Facility Excellence.</span>
               </h1>
               <p className="text-white/90 text-lg leading-relaxed mb-4 border-l-4 border-highlight pl-5 py-1">
-                <strong>Sailaja Suresh Facility Services</strong> is a trusted third-party manpower service provider delivering skilled and semi-skilled workforce across multiple industries.
+                <strong>S S FACILITY SERVICES</strong> is a trusted third-party manpower service provider delivering skilled and semi-skilled workforce across multiple industries.
               </p>
               <p className="text-accent text-base leading-relaxed mb-4">
                 With a strong presence in key industrial regions, we help businesses focus on growth while we handle their staffing needs with speed, reliability, and professionalism.

@@ -33,12 +33,12 @@ const Navbar = () => {
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <Link to="/" className="flex items-center space-x-3 md:space-x-4 group">
-                        <img src={logo} alt="Sailaja Suresh Logo" className="h-12 md:h-16 w-auto rounded-md shadow-2xl transition-transform group-hover:scale-105 flex-shrink-0" />
-                        <div className="flex flex-col md:flex-row md:items-center">
-                            <span className="text-white font-black text-xs sm:text-sm md:text-xl lg:text-2xl tracking-tight uppercase leading-tight md:whitespace-nowrap">
-                                <span className="block md:inline">SAILAJA SURESH</span>
-                                <span className="hidden md:inline"> </span>
-                                <span className="block md:inline">FACILITY SERVICES</span>
+                        <img src={logo} alt="S S Logo" className="h-12 md:h-16 w-auto rounded-md shadow-2xl transition-transform group-hover:scale-105 flex-shrink-0" />
+                        <div className="flex flex-row items-center">
+                            <span className="font-black text-[10px] sm:text-xs md:text-xl lg:text-3xl tracking-tighter uppercase leading-tight whitespace-nowrap flex flex-row items-center">
+                                <span className="text-brand-green">S S</span>
+                                <span className="mx-1.5 md:mx-2 text-white/30 font-thin italic">|</span>
+                                <span className="text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">FACILITY SERVICES</span>
                             </span>
                         </div>
                     </Link>

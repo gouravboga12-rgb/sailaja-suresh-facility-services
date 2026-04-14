@@ -13,10 +13,11 @@ const Footer = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-start gap-10 mb-16 pb-16 border-b border-white/5">
                     <div className="max-w-2xl">
                         <Link to="/" className="flex items-center space-x-5 group mb-8">
-                            <img src={logo} alt="Sailaja Suresh Logo" className="h-16 w-auto rounded-xl shadow-2xl transition-transform group-hover:scale-105" />
-                            <span className="text-white font-black text-xl md:text-3xl tracking-tighter uppercase leading-tight block">
-                                <span className="block sm:inline">Sailaja Suresh</span>{' '}
-                                <span className="block sm:inline">Facility Services</span>
+                            <img src={logo} alt="S S Facility Services Logo" className="h-16 w-auto rounded-xl shadow-2xl transition-transform group-hover:scale-105" />
+                            <span className="font-black text-xl md:text-3xl tracking-tighter uppercase leading-tight flex flex-row items-center whitespace-nowrap">
+                                <span className="text-brand-green">S S</span>
+                                <span className="mx-3 text-white/20 font-thin italic">|</span>
+                                <span className="text-white">Facility Services</span>
                             </span>
                         </Link>
                         <p className="text-accent text-base leading-relaxed max-w-xl">
@@ -121,7 +122,7 @@ const Footer = () => {
                 <div className="pt-10 border-t border-secondary/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
                     <div className="space-y-2">
                         <p className="text-accent/60 text-xs">
-                            &copy; {currentYear} Sailaja Suresh Facility Services. All rights reserved.
+                            &copy; {currentYear} S S Facility Services. All rights reserved.
                         </p>
                         <p className="text-accent/60 text-[10px] uppercase font-bold tracking-widest leading-loose">
                             Developed by{' '}

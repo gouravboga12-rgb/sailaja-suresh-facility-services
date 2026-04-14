@@ -32,7 +32,7 @@ const Hero = () => {
                         </div>
                         
                         <p className="text-white/90 text-lg md:text-xl max-w-2xl leading-relaxed font-medium border-l-4 border-highlight pl-6 py-2" data-aos="fade-up" data-aos-delay="300">
-                            <span className="text-white font-bold">Sailaja Suresh Facility Services</span> provides top-tier manpower specialized in <span className="text-highlight font-bold">housekeeping</span>, <span className="text-highlight font-bold">production</span>, and <span className="text-highlight font-bold">technical facility management</span>.
+                            <span className="text-white font-bold">S S Facility Services</span> provides top-tier manpower specialized in <span className="text-highlight font-bold">housekeeping</span>, <span className="text-highlight font-bold">production</span>, and <span className="text-highlight font-bold">technical facility management</span>.
                         </p>
                         
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">

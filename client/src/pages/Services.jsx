@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { getServices } from '../api';
 import { defaultServices } from '../data/defaultData';
+import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -33,6 +34,11 @@ const Services = () => {
 
   return (
     <div className="bg-black pt-32 pb-24">
+      <Helmet>
+        <title>Our Services | S S Facility Services</title>
+        <meta name="description" content="Explore our wide range of professional services including housekeeping, industrial production staff, pantry boys, technical maintenance, and more." />
+        <link rel="canonical" href="https://ssfacilityservice.com/services" />
+      </Helmet>
       {/* Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center">
         <h2 className="text-secondary font-bold tracking-[0.4em] uppercase mb-4" data-aos="fade-up">
