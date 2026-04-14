@@ -27,7 +27,7 @@ const ServiceCard = ({ icon: Icon, image, images = [], title, shortDesc, longDes
         >
             {/* Service Image Carousel Section (Instagram Style) */}
             <div className="relative h-64 overflow-hidden bg-black/50 group/carousel">
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="wait" initial={false}>
                     <motion.img 
                         key={currentIndex}
                         src={allImages[currentIndex]} 
@@ -36,7 +36,18 @@ const ServiceCard = ({ icon: Icon, image, images = [], title, shortDesc, longDes
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.4, ease: "easeOut" }}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover cursor-grab active:cursor-grabbing touch-pan-y"
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={0.8}
+                        onDragEnd={(e, { offset, velocity }) => {
+                            const swipe = offset.x;
+                            if (swipe < -50) {
+                                nextImage(e);
+                            } else if (swipe > 50) {
+                                prevImage(e);
+                            }
+                        }}
                     />
                 </AnimatePresence>
 
